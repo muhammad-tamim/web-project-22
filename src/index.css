@@ -9,3 +9,13 @@
 .playfair {
     font-family: "Playfair", serif;
 }
+
+/* customize daisyUI theme */
+@plugin "daisyui/theme" {
+    name: "light";
+    default: true;
+    --color-primary: #23BE0A;
+    --color-primary-content: #131313;
+    --color-secondary: #59C6D2;
+    --color-secondary-content: #13131380;
+}

@@ -10,7 +10,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router';
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <h1>Welcome to the Home Page</h1>,
+    element: <h1 className='text-primary'>Welcome to the Home Page</h1>,
 
   },
 ])
