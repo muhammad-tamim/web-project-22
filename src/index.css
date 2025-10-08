@@ -1,2 +1,11 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+/* google fonts */
+.work-sans {
+    font-family: "Work Sans", sans-serif;
+}
+
+.playfair {
+    font-family: "Playfair", serif;
+}
