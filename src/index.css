@@ -6,7 +6,11 @@
     font-family: "Work Sans", sans-serif;
 }
 
-.playfair {
+/* .playfair {
+    font-family: "Playfair", serif;
+} */
+
+body {
     font-family: "Playfair", serif;
 }
 
