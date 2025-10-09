@@ -5,7 +5,6 @@ const HomePage = () => {
     return (
         <div>
             <Hero></Hero>
-            <h1>books</h1>
         </div>
     );
 };
