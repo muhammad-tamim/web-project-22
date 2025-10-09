@@ -69,6 +69,27 @@ export default ErrorPage;
 2. React feature-based folder structure
 
 ## Challenges I faced while Building This Project:
+1. I had a bit of trouble aligning the drawer icon to the right.
+
+```jsx
+{/* drawer */}
+<div className="drawer justify-end drawer-end lg:hidden">
+    <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
+    <div className="drawer-content">
+        {/* Page content here */}
+        <label htmlFor="my-drawer-4" className="btn"><CiMenuFries /></label>
+    </div>
+    <div className="drawer-side">
+        <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
+        <ul className="menu bg-base-200 text-base-content min-h-full w-52 p-4 ">
+            {/* Sidebar content here */}
+            {navItems.map((item) => <li key={item.id}><Link to={item.to}>{item.value}</Link></li>)}
+            <li><a href="">Sign In</a></li>
+            <li><a href="">Sign Up</a></li>
+        </ul>
+    </div>
+</div>
+```
 
 ## Contact With Me: 
 
