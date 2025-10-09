@@ -1,7 +1,8 @@
 import React from 'react';
-import { NavLink } from 'react-router';
+import { Link, NavLink } from 'react-router';
 import PrimaryButton from '../../ui/buttons/PrimaryButton/PrimaryButton';
 import SecondaryButton from '../../ui/buttons/SecondaryButton/SecondaryButton';
+import { CiMenuFries } from 'react-icons/ci';
 
 const Navbar = () => {
     const navItems = [
@@ -10,30 +11,40 @@ const Navbar = () => {
         { id: 3, value: "Pages to Read", to: "pages-to-read" },
     ]
     return (
-        <div className="navbar work-sans py-[50px]">
+        <div className="navbar work-sans py-5 lg:py-[50px] ">
             <div className="navbar-start">
-                <div className="dropdown">
-                    <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
-                    </div>
-                    <ul
-                        tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                        {navItems.map((item) => <li key={item.id}><NavLink className={({ isActive }) => isActive ? 'text-red-500' : "text-green-600"} to={item.to}>{item.value}</NavLink></li>)}
-                    </ul>
-                </div>
-                <a className="text-primary-content font-bold text-3xl">Book Vibe</a>
+                <a className="text-primary-content font-bold text-2xl lg:text-3xl">Book Vibe</a>
             </div>
-            <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1 items-center gap-10">
+            <div className="navbar-center hidden md:flex">
+                <ul className="menu menu-horizontal px-1 items-center gap-5 lg:gap-10">
                     {navItems.map((item) => <li key={item.id}><NavLink
                         className={({ isActive }) => isActive ? 'text-primary text-lg font-semibold py-[14px] px-5 border border-primary rounded-lg'
                             : "text-secondary-content text-lg"} to={item.to}>{item.value}</NavLink></li>)}
                 </ul>
             </div>
-            <div className="navbar-end gap-4">
-                <PrimaryButton text={"Sign In"}></PrimaryButton>
-                <SecondaryButton text={"Sign Up"}></SecondaryButton>
+            <div className="navbar-end">
+                {/* drawer */}
+                <div className="drawer justify-end drawer-end lg:hidden">
+                    <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
+                    <div className="drawer-content">
+                        {/* Page content here */}
+                        <label htmlFor="my-drawer-4" className="btn"><CiMenuFries /></label>
+                    </div>
+                    <div className="drawer-side">
+                        <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
+                        <ul className="menu bg-base-200 text-base-content min-h-full w-52 p-4 ">
+                            {/* Sidebar content here */}
+                            {navItems.map((item) => <li key={item.id}><Link to={item.to}>{item.value}</Link></li>)}
+                            <li><a href="">Sign In</a></li>
+                            <li><a href="">Sign Up</a></li>
+                        </ul>
+                    </div>
+                </div>
+                {/* buttons */}
+                <div className='gap-4 hidden lg:flex'>
+                    <PrimaryButton text={"Sign In"}></PrimaryButton>
+                    <SecondaryButton text={"Sign Up"}></SecondaryButton>
+                </div>
             </div>
         </div >
     );
