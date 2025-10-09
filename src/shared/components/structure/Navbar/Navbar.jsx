@@ -3,13 +3,10 @@ import { Link, NavLink } from 'react-router';
 import PrimaryButton from '../../ui/buttons/PrimaryButton/PrimaryButton';
 import SecondaryButton from '../../ui/buttons/SecondaryButton/SecondaryButton';
 import { CiMenuFries } from 'react-icons/ci';
+import { navItems } from '../../../constants/NavItem';
 
 const Navbar = () => {
-    const navItems = [
-        { id: 1, value: "Home", to: "/" },
-        { id: 2, value: "Listed Books", to: "listed-books" },
-        { id: 3, value: "Pages to Read", to: "pages-to-read" },
-    ]
+
     return (
         <div className="navbar work-sans py-5 lg:py-[50px] ">
             <div className="navbar-start">
