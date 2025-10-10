@@ -122,8 +122,44 @@ const Skeleton = () => {
 
 export default Skeleton;
 ```
+3. How to use react-tabs: 
 
-3. React feature-based folder structure
+```jsx
+npm install --save react-tabs
+```
+
+```jsx
+import React from 'react';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
+
+const ListedBooksPage = () => {
+    return (
+        <div className='mb-[100px]'>
+            <h1 className='work-sans font-bold text-[28px] text-primary-content text-center py-8 bg-[#13131305] rounded-2xl mb-[140px]'>Books</h1>
+            <div>
+                <Tabs>
+                    <TabList>
+                        <Tab>Title 1</Tab>
+                        <Tab>Title 2</Tab>
+                    </TabList>
+
+                    <TabPanel>
+                        <h2>Any content 1</h2>
+                    </TabPanel>
+                    <TabPanel>
+                        <h2>Any content 2</h2>
+                    </TabPanel>
+                </Tabs>
+            </div>
+        </div>
+    );
+};
+
+export default ListedBooksPage;
+```
+
+4. React feature-based folder structure
 
 ## Challenges I faced while Building This Project:
 1. I had a bit of trouble aligning the drawer icon to the right.
