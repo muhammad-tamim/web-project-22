@@ -13,7 +13,7 @@ const ReadListProvider = ({ children }) => {
         }
         else {
             setReadList([...readList, book])
-            toast.success("Hello")
+            toast.success("Your book is added")
         }
     };
 

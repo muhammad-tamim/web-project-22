@@ -1,11 +1,4 @@
-import React from 'react';
+import { createContext } from "react";
 
-const WishListContext = () => {
-    return (
-        <div>
+export const WishListContext = createContext()
 
-        </div>
-    );
-};
-
-export default WishListContext;

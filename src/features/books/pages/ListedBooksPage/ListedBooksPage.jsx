@@ -2,12 +2,14 @@ import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { useReadLits } from '../../hooks/useReadList';
-import ReadBooksCard from '../../components/Books/ReadBooksCard/ReadBooksCard';
+import ListedCard from '../../components/Books/ListedCard/ListedCard';
 import { FaAngleDown } from 'react-icons/fa';
+import { useWithList } from '../../hooks/useWishList';
 
 const ListedBooksPage = () => {
 
     const { readList } = useReadLits()
+    const { wishList } = useWithList()
 
 
     return (
@@ -31,10 +33,11 @@ const ListedBooksPage = () => {
 
                     <TabPanel>
                         {readList.length === 0 && <p className='text-primary-content pt-5 text-2xl font-semibold'>You didn't read any book yet</p>}
-                        {readList.map(list => <ReadBooksCard key={list.bookId} list={list}></ReadBooksCard>)}
+                        {readList.map(list => <ListedCard key={list.bookId} list={list}></ListedCard>)}
                     </TabPanel>
                     <TabPanel>
-                        <h2>Any content 2</h2>
+                        {wishList.length === 0 && <p className='text-primary-content pt-5 text-2xl font-semibold'>You didn't wish any book yet</p>}
+                        {wishList.map(list => <ListedCard key={list.bookId} list={list}></ListedCard>)}
                     </TabPanel>
                 </Tabs>
             </div>

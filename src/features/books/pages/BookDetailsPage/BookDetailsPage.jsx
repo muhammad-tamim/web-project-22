@@ -5,12 +5,16 @@ import AccentButton from '../../../../shared/components/ui/buttons/AccentButton/
 import Skeleton from '../../../../shared/components/ui/spinners/Skeleton/Skeleton';
 import { useReadLits } from '../../hooks/useReadList';
 import { Toaster } from 'react-hot-toast';
+import { useWithList } from '../../hooks/useWishList';
 
 const BookDetailsPage = () => {
 
     const { addToRead } = useReadLits()
+    const { addToWish } = useWithList()
+
     const { id } = useParams()
     const [clickRead, setClickRead] = useState(false)
+    const [clickWish, setClickWish] = useState(false)
 
     const [books, setBooks] = useState([])
     const [loading, setLoading] = useState(true)
@@ -72,8 +76,13 @@ const BookDetailsPage = () => {
                         }}>
                             <AccentButton text={"Read"} clickRead={clickRead}></AccentButton>
                         </div>
-                        <div >
-                            <SecondaryButton text={"WishList"}></SecondaryButton>
+                        <div onClick={() => {
+                            if (!clickWish) {
+                                addToWish(filterBook)
+                                setClickWish(true)
+                            }
+                        }}>
+                            <SecondaryButton text={"WishList"} clickWish={clickWish}></SecondaryButton>
                         </div>
                     </div>
                 </div>

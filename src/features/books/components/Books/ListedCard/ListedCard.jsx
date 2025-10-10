@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router';
 import { CiLocationOn } from 'react-icons/ci';
 import { IoBookOutline, IoPeopleOutline } from 'react-icons/io5';
 
-const ReadBooksCard = ({ list }) => {
+const ListedCard = ({ list }) => {
 
     const navigate = useNavigate()
 
@@ -50,4 +50,4 @@ const ReadBooksCard = ({ list }) => {
     );
 };
 
-export default ReadBooksCard;
+export default ListedCard;
