@@ -3,6 +3,7 @@ import HomePage from "../../pages/HomePage/HomePage";
 import MainLayout from "../../layouts/MainLayout/MainLayout";
 import ErrorPage from "../../pages/ErrorPage/ErrorPage";
 import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage";
+import BookDetailsPage from "../../features/books/pages/BookDetailsPage/BookDetailsPage";
 
 export const AppRoutes = createBrowserRouter([
     {
@@ -13,9 +14,12 @@ export const AppRoutes = createBrowserRouter([
             {
                 index: true,
                 Component: HomePage
+            },
+            {
+                path: 'book-details/:id',
+                Component: BookDetailsPage
             }
         ]
-
     },
     {
         path: "*",

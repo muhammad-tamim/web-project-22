@@ -7,11 +7,9 @@ import Container from '../../shared/components/structure/Container/Container';
 const MainLayout = () => {
     return (
         <Container>
-            <div>
-                <Navbar></Navbar>
-                <Outlet></Outlet>
-                <Footer></Footer>
-            </div>
+            <Navbar></Navbar>
+            <Outlet></Outlet>
+            <Footer></Footer>
         </Container>
     );
 };
