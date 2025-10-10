@@ -158,6 +158,9 @@ const ListedBooksPage = () => {
 
 export default ListedBooksPage;
 ```
+
+![image](./src/assets/readme-images/react-tabs.png)
+
 4. How to navigate relative path: 
 
 ```jsx
@@ -273,7 +276,7 @@ const ListedBooksPage = () => {
 export default ListedBooksPage;
 ```
 
-5. React feature-based folder structure
+
 
 ## Challenges I faced while Building This Project:
 1. I had a bit of trouble aligning the drawer icon to the right.
@@ -297,6 +300,9 @@ export default ListedBooksPage;
     </div>
 </div>
 ```
+
+2. For the first time in this project i learn feature-based folder structure, so it's fell little bit complicated for me.
+
 
 ## Contact With Me: 
 
