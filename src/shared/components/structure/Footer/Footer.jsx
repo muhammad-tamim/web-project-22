@@ -7,8 +7,7 @@ const Footer = () => {
         <footer className="footer footer-horizontal footer-center bg-base-200 text-base-content rounded p-10">
             <ul className="grid grid-flow-col gap-4">
                 {navItems.map((item) => <li key={item.id}><Link
-                    className={({ isActive }) => isActive ? 'text-primary text-lg font-semibold py-[14px] px-5 border border-primary rounded-lg'
-                        : "text-secondary-content text-lg"} to={item.to}>{item.value}</Link></li>)}
+                    to={item.to}>{item.value}</Link></li>)}
             </ul>
             <nav>
                 <div className="grid grid-flow-col gap-4">
