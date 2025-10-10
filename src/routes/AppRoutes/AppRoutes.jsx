@@ -5,6 +5,7 @@ import ErrorPage from "../../pages/ErrorPage/ErrorPage";
 import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage";
 import BookDetailsPage from "../../features/books/pages/BookDetailsPage/BookDetailsPage";
 import ListedBooksPage from "../../features/books/pages/ListedBooksPage/ListedBooksPage";
+import PagesToReadPage from "../../features/books/pages/PagesToReadPage/PagesToReadPage";
 
 export const AppRoutes = createBrowserRouter([
     {
@@ -23,6 +24,10 @@ export const AppRoutes = createBrowserRouter([
             {
                 path: 'listed-books',
                 Component: ListedBooksPage,
+            },
+            {
+                path: 'pages-to-read',
+                Component: PagesToReadPage,
             },
         ]
     },
