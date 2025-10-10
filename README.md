@@ -158,8 +158,122 @@ const ListedBooksPage = () => {
 
 export default ListedBooksPage;
 ```
+4. How to navigate relative path: 
 
-4. React feature-based folder structure
+```jsx
+import { createBrowserRouter } from "react-router";
+import HomePage from "../../pages/HomePage/HomePage";
+import MainLayout from "../../layouts/MainLayout/MainLayout";
+import ErrorPage from "../../pages/ErrorPage/ErrorPage";
+import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage";
+import BookDetailsPage from "../../features/books/pages/BookDetailsPage/BookDetailsPage";
+import ListedBooksPage from "../../features/books/pages/ListedBooksPage/ListedBooksPage";
+
+export const AppRoutes = createBrowserRouter([
+    {
+        path: '/',
+        Component: MainLayout,
+        errorElement: <ErrorPage></ErrorPage>,
+        children: [
+            {
+                index: true,
+                Component: HomePage
+            },
+            {
+                path: 'book-details/:id',
+                Component: BookDetailsPage
+            },
+            {
+                path: 'listed-books',
+                Component: ListedBooksPage,
+            },
+        ]
+    },
+    {
+        path: "*",
+        element: <NotFoundPage></NotFoundPage>
+    }
+])
+```
+
+```jsx
+import React from 'react';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
+import { useReadLits } from '../../hooks/useReadList';
+import { CiLocationOn } from 'react-icons/ci';
+import { IoBookOutline, IoPeopleOutline } from 'react-icons/io5';
+import { useNavigate } from 'react-router';
+
+const ListedBooksPage = () => {
+
+    const { readList, wishlist } = useReadLits()
+    const navigate = useNavigate()
+
+    const handleClick = (id) => {
+        navigate(`../book-details/${id}`)
+    }
+
+    return (
+        <div className='mb-[100px]'>
+            <h1 className='work-sans font-bold text-[28px] text-primary-content text-center py-8 bg-[#13131305] rounded-2xl mb-[140px]'>Books</h1>
+            <div>
+                <Tabs>
+                    <TabList>
+                        <Tab>Read Books</Tab>
+                        <Tab>WishList Books</Tab>
+                    </TabList>
+
+                    <TabPanel>
+                        {readList.map(list => <div key={list.bookId} className='border border-[#13131315] rounded-2xl p-6 my-8 flex gap-6'>
+                            <div className='bg-[#13131305] rounded-2xl py-[50px] px-7'>
+                                <img className='w-[129px] h-[172px]' src={list.image} alt="" />
+                            </div>
+                            <div className='space-y-4'>
+                                <h2 className='font-bold text-2xl text-primary-content'>{list.bookName}</h2>
+                                <p className='work-sans font-medium text-secondary-content'>By: {list.author}</p>
+                                <div className='flex gap-4 items-center'>
+                                    <div className='flex gap-4 items-center'>
+                                        <p className='work-sand font-bold'>Tag</p>
+                                        {list.tags.map((tag, index) => <p key={index} className='text-primary font-medium bg-[#23BE0A05] rounded-[30px] py-2.5 px-4'>#{tag}</p>)}
+                                    </div>
+                                    <div className='text-secondary-content flex gap-3 items-center'>
+                                        <CiLocationOn />
+                                        <p>Year of Publishing: {list.yearOfPublishing}</p>
+                                    </div>
+                                </div>
+                                <div className='work-sans text-secondary-content flex items-center gap-4'>
+                                    <div className='flex gap-2 items-center'>
+                                        <IoPeopleOutline />
+                                        <p>Publisher: {list.publisher}</p>
+                                    </div>
+                                    <div className='flex gap-2 items-center'>
+                                        <IoBookOutline />
+                                        <p>Page: {list.totalPages}</p>
+                                    </div>
+                                </div>
+                                <hr className='text-[#13131315]' />
+                                <div className='flex items-center gap-3 work-sans'>
+                                    <p className='text-[#328EFF] py-[11px] px-[20px] rounded-[30px] bg-[#328EFF15]'>Category: {list.category}</p>
+                                    <p className='text-[#FFAC33] py-[11px] px-[20px] rounded-[30px] bg-[#FFAC3315]'>Rating: {list.rating}</p>
+                                    <p onClick={() => handleClick(list.bookId)} className='text-white py-[11px] px-[20px] rounded-[30px] bg-primary cursor-pointer'>View Details</p>
+                                </div>
+                            </div>
+                        </div>)}
+                    </TabPanel>
+                    <TabPanel>
+                        <h2>Any content 2</h2>
+                    </TabPanel>
+                </Tabs>
+            </div>
+        </div>
+    );
+};
+
+export default ListedBooksPage;
+```
+
+5. React feature-based folder structure
 
 ## Challenges I faced while Building This Project:
 1. I had a bit of trouble aligning the drawer icon to the right.
