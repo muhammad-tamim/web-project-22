@@ -8,7 +8,10 @@
     "totalPages": 192,
     "rating": 4.5,
     "category": "Classic",
-    "tags": ["Fiction", "Romance"],
+    "tags": [
+      "Fiction",
+      "Romance"
+    ],
     "publisher": "Scribner",
     "yearOfPublishing": 1925
   },
@@ -21,7 +24,10 @@
     "totalPages": 281,
     "rating": 4.8,
     "category": "Fiction",
-    "tags": ["Drama", "Social Justice"],
+    "tags": [
+      "Drama",
+      "Social Justice"
+    ],
     "publisher": "J.B. Lippincott & Co.",
     "yearOfPublishing": 1960
   },
@@ -34,7 +40,10 @@
     "totalPages": 328,
     "rating": 4.6,
     "category": "Fiction",
-    "tags": ["Dystopian", "Political"],
+    "tags": [
+      "Dystopian",
+      "Political"
+    ],
     "publisher": "Secker & Warburg",
     "yearOfPublishing": 1949
   },
@@ -47,7 +56,10 @@
     "totalPages": 224,
     "rating": 4.3,
     "category": "Fiction",
-    "tags": ["Young Adult", "Identity"],
+    "tags": [
+      "Young Adult",
+      "Identity"
+    ],
     "publisher": "Little, Brown and Company",
     "yearOfPublishing": 1951
   },
@@ -60,7 +72,10 @@
     "totalPages": 279,
     "rating": 4.7,
     "category": "Classic",
-    "tags": ["Romance", "Satire"],
+    "tags": [
+      "Romance",
+      "Satire"
+    ],
     "publisher": "T. Egerton, Whitehall",
     "yearOfPublishing": 1813
   },
@@ -73,7 +88,10 @@
     "totalPages": 310,
     "rating": 4.9,
     "category": "Fantasy",
-    "tags": ["Adventure", "Epic"],
+    "tags": [
+      "Adventure",
+      "Epic"
+    ],
     "publisher": "Allen & Unwin",
     "yearOfPublishing": 1937
   },
@@ -86,7 +104,10 @@
     "totalPages": 309,
     "rating": 4.8,
     "category": "Fantasy",
-    "tags": ["Magic", "Young Adult"],
+    "tags": [
+      "Magic",
+      "Young Adult"
+    ],
     "publisher": "Bloomsbury",
     "yearOfPublishing": 1997
   },
@@ -99,7 +120,10 @@
     "totalPages": 177,
     "rating": 4.6,
     "category": "Fiction",
-    "tags": ["Philosophical", "Adventure"],
+    "tags": [
+      "Philosophical",
+      "Adventure"
+    ],
     "publisher": "HarperCollins",
     "yearOfPublishing": 1988
   },
@@ -112,7 +136,10 @@
     "totalPages": 316,
     "rating": 4.2,
     "category": "Mystery",
-    "tags": ["Suspense", "Psychological"],
+    "tags": [
+      "Suspense",
+      "Psychological"
+    ],
     "publisher": "Riverhead Books",
     "yearOfPublishing": 2015
   }
