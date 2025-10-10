@@ -4,6 +4,7 @@ import MainLayout from "../../layouts/MainLayout/MainLayout";
 import ErrorPage from "../../pages/ErrorPage/ErrorPage";
 import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage";
 import BookDetailsPage from "../../features/books/pages/BookDetailsPage/BookDetailsPage";
+import ListedBooksPage from "../../features/books/pages/ListedBooksPage/ListedBooksPage";
 
 export const AppRoutes = createBrowserRouter([
     {
@@ -18,7 +19,11 @@ export const AppRoutes = createBrowserRouter([
             {
                 path: 'book-details/:id',
                 Component: BookDetailsPage
-            }
+            },
+            {
+                path: 'listed-books',
+                Component: ListedBooksPage,
+            },
         ]
     },
     {

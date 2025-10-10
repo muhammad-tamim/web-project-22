@@ -3,10 +3,14 @@ import { useParams } from 'react-router';
 import SecondaryButton from '../../../../shared/components/ui/buttons/SecondaryButton/SecondaryButton';
 import AccentButton from '../../../../shared/components/ui/buttons/AccentButton/AccentButton';
 import Skeleton from '../../../../shared/components/ui/spinners/Skeleton/Skeleton';
+import { useReadLits } from '../../hooks/useReadList';
+import { Toaster } from 'react-hot-toast';
 
 const BookDetailsPage = () => {
 
+    const { addToRead } = useReadLits()
     const { id } = useParams()
+    const [clickRead, setClickRead] = useState(false)
 
     const [books, setBooks] = useState([])
     const [loading, setLoading] = useState(true)
@@ -25,9 +29,9 @@ const BookDetailsPage = () => {
 
     const { bookId, image, tags = [], bookName, author, category, rating, review, totalPages, publisher, yearOfPublishing } = filterBook
 
-    console.log(filterBook)
     return (
         <>
+            <Toaster position="top-right" />
             {loading && <div className='flex'>
                 <Skeleton></Skeleton>
                 <Skeleton></Skeleton>
@@ -60,8 +64,17 @@ const BookDetailsPage = () => {
                         </div>
                     </div>
                     <div className='flex gap-4 justify-center xl:justify-start'>
-                        <AccentButton text={"Read"}></AccentButton>
-                        <SecondaryButton text={"WishList"}></SecondaryButton>
+                        <div onClick={() => {
+                            if (!clickRead) {
+                                addToRead(filterBook)
+                                setClickRead(true)
+                            }
+                        }}>
+                            <AccentButton text={"Read"} clickRead={clickRead}></AccentButton>
+                        </div>
+                        <div >
+                            <SecondaryButton text={"WishList"}></SecondaryButton>
+                        </div>
                     </div>
                 </div>
             </div>}
