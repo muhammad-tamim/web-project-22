@@ -66,7 +66,64 @@ const ErrorPage = () => {
 
 export default ErrorPage;
 ```
-2. React feature-based folder structure
+
+2. How to use a skeleton: 
+
+```jsx
+import React, { useEffect, useState } from 'react';
+import BooksCard from './BooksCard/BooksCard';
+import Skeleton from '../../../../shared/components/ui/spinners/Skeleton/Skeleton';
+
+const Books = () => {
+    const [books, setBooks] = useState([])
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(null)
+
+    useEffect(() => {
+        fetch('/booksData.json')
+            .then(res => res.json())
+            .then(data => setBooks(data))
+            .catch(err => setError(err))
+            .finally(() => setLoading(false))
+    }, [])
+
+
+    return (
+        <div className='py-[100px]'>
+            <h2 className='text-[40px] font-bold text-center pb-9'>Books</h2>
+            <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6'>
+                {error && <p className='text-red-500 text-center col-span-full text-3xl'>{error.message}</p>}
+                {loading && Array(6).fill(0).map((_, index) => <Skeleton key={index}></Skeleton>)}
+                {books.map((book) => <BooksCard key={book.bookId} book={book}></BooksCard>)}
+            </div>
+        </div>
+    );
+};
+
+export default Books;
+```
+
+```jsx
+import React from 'react';
+import Container from '../../../structure/Container/Container';
+
+const Skeleton = () => {
+    return (
+        <Container>
+            <div className="flex w-80 flex-col gap-4 pb-10">
+                <div className="skeleton h-40 w-full"></div>
+                <div className="skeleton h-4 w-28"></div>
+                <div className="skeleton h-4 w-full"></div>
+                <div className="skeleton h-4 w-full"></div>
+            </div>
+        </Container>
+    );
+};
+
+export default Skeleton;
+```
+
+3. React feature-based folder structure
 
 ## Challenges I faced while Building This Project:
 1. I had a bit of trouble aligning the drawer icon to the right.

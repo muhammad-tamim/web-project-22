@@ -8,7 +8,7 @@ const BooksCard = ({ book }) => {
         <Link>
             <div className='border border-[#13131315] rounded-2xl p-6'>
                 <div className='py-8 px-24 bg-[#F3F3F3] rounded-2xl mb-6'>
-                    <img className='mx-auto w-[134px] h-[166px]' src={image} alt="" />
+                    <img className='mx-auto lg:w-[134px] lg:h-[166px]' src={image} alt="" />
                 </div>
                 <div className='flex gap-10 work-sans pb-4'>
                     {tags.map((tag, index) => <p key={index} className='text-primary'>{tag}</p>)}
